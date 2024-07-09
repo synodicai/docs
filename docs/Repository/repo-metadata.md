@@ -9,7 +9,7 @@ Retrieves information about a user's repository.
 
 ### URL
 
-`GET https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}`
+`GET https://api.synodic.ai/{user}/{repo}`
 
 ### Path Parameters
 
@@ -19,5 +19,5 @@ Retrieves information about a user's repository.
 ### Example Request
 
 ```bash
-curl -X GET "https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{username}/{repo}"
+curl -X GET "https://api.synodic.ai/{username}/{repo}"
 ```

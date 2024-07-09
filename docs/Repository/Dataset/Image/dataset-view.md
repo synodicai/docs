@@ -9,7 +9,7 @@ Retrieves a view of the dataset for the specified repository.
 
 ### URL
 
-`GET https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/dataset/view`
+`GET https://api.synodic.ai/{user}/{repo}/dataset/view`
 
 ### Path Parameters
 
@@ -28,11 +28,11 @@ Retrieves a view of the dataset for the specified repository.
 ### Example Request
 
 ```bash
-curl -X GET "https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/dataset/view" \
+curl -X GET "https://api.synodic.ai/{user}/{repo}/dataset/view" \
 -H "start: 0" \
 -H "end: 10"
 
 # OR
 
-curl -X GET "https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/dataset/view" \
+curl -X GET "https://api.synodic.ai/{user}/{repo}/dataset/view" \
 -H "file: specific_filename.txt"

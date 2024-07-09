@@ -9,7 +9,7 @@ Deletes images from the specified repository's dataset.
 
 ### URL
 
-`POST https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/dataset/image/delete`
+`POST https://api.synodic.ai/{user}/{repo}/dataset/image/delete`
 
 ### Path Parameters
 
@@ -23,7 +23,7 @@ Deletes images from the specified repository's dataset.
 ### Example Request
 
 ```bash
-curl -X POST "https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/dataset/image/delete" \
+curl -X POST "https://api.synodic.ai/{user}/{repo}/dataset/image/delete" \
 -H "Content-Type: application/json" \
 -d '{
   "images": "image1.jpg|image2.jpg|image3.jpg"

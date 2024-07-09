@@ -9,7 +9,7 @@ Removes a class from the specified repository's dataset.
 
 ### URL
 
-`GET https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/dataset/classes/remove`
+`GET https://api.synodic.ai/{user}/{repo}/dataset/classes/remove`
 
 ### Path Parameters
 
@@ -23,5 +23,5 @@ Removes a class from the specified repository's dataset.
 ### Example Request
 
 ```bash
-curl -X GET "https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{username}/{repo}/dataset/classes/remove" \
+curl -X GET "https://api.synodic.ai/{username}/{repo}/dataset/classes/remove" \
 -H "remove_class_index: 1"

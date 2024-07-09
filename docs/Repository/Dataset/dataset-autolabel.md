@@ -9,7 +9,7 @@ Automatically labels the dataset for the specified repository.
 
 ### URL
 
-`POST https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/dataset/autolabel`
+`POST https://api.synodic.ai/{user}/{repo}/dataset/autolabel`
 
 ### Path Parameters
 
@@ -24,7 +24,7 @@ Automatically labels the dataset for the specified repository.
 ### Example Request
 
 ```bash
-curl -X POST "https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{username}/{repo}/dataset/autolabel" \
+curl -X POST "https://api.synodic.ai/{username}/{repo}/dataset/autolabel" \
 -H "Content-Type: application/json" \
 -d '{
   "images": "image1.jpg|image2.jpg|image3.jpg",

@@ -9,7 +9,7 @@ Downloads the specified model's weights for the given epoch.
 
 ### URL
 
-`GET https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/models/download`
+`GET https://api.synodic.ai/{user}/{repo}/models/download`
 
 ### Path Parameters
 
@@ -24,6 +24,6 @@ Downloads the specified model's weights for the given epoch.
 ### Example Request
 
 ```bash
-curl -X GET "https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/models/download" \
+curl -X GET "https://api.synodic.ai/{user}/{repo}/models/download" \
 -H "model: model_id" \
 -H "epoch: 49"

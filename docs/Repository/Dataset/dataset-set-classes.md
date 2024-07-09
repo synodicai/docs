@@ -9,7 +9,7 @@ Sets the classes for the specified repository's dataset.
 
 ### URL
 
-`GET https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/dataset/classes`
+`GET https://api.synodic.ai/{user}/{repo}/dataset/classes`
 
 ### Path Parameters
 
@@ -24,5 +24,5 @@ Sets the classes for the specified repository's dataset.
 ### Example Request
 
 ```bash
-curl -X GET "https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{username}/{repo}/dataset/classes" \
+curl -X GET "https://api.synodic.ai/{username}/{repo}/dataset/classes" \
 -H "classes: {\"0\": \"pizza\", \"1\": \"pasta\"}"

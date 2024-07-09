@@ -9,7 +9,7 @@ Updates the label in the .txt file of the annotation in YOLO dataset format.
 
 ### URL
 
-`POST https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/dataset/label`
+`POST https://api.synodic.ai/{user}/{repo}/dataset/label`
 
 ### Path Parameters
 
@@ -24,7 +24,7 @@ Updates the label in the .txt file of the annotation in YOLO dataset format.
 ### Example Request
 
 ```bash
-curl -X POST "https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/dataset/label" \
+curl -X POST "https://api.synodic.ai/{user}/{repo}/dataset/label" \
 -H "Content-Type: application/json" \
 -d '{
   "new_label": "new_label_text",

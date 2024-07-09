@@ -9,7 +9,7 @@ Initiates the training of the specified model for the user's repository.
 
 ### URL
 
-`GET https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/models/train`
+`GET https://api.synodic.ai/{user}/{repo}/models/train`
 
 ### Path Parameters
 
@@ -27,7 +27,7 @@ Initiates the training of the specified model for the user's repository.
 ### Example Request
 
 ```bash
-curl -X GET "https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/models/train" \
+curl -X GET "https://api.synodic.ai/{user}/{repo}/models/train" \
 -H "model: yolov8n" \
 -H "train_percent: 70" \
 -H "test_percent: 20" \

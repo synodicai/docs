@@ -1,8 +1,8 @@
 ---
-id: user-delete
-title: User Delete
-sidebar_label: Delete
-slug: /user/delete
+id: user-available
+title: User Available
+sidebar_label: Available
+slug: /user/available
 ---
 
 ```mdx-code-block
@@ -10,15 +10,16 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-Permanently deletes all user data.
+Checks if the username is available or already taken.
+
 
 ### URL
 
-`DELETE https://api.synodic.ai/{user}`
+`GET https://api.synodic.ai/{user}/available`
 
 ### Path Parameters
 
-- **\{user\}**: username (string) or Firebase UID (string)
+- **\{user\}**: username (string)
 
 ### Example Request
 
@@ -26,7 +27,7 @@ Permanently deletes all user data.
 <TabItem value="Bash">
 
 ```bash
-curl -X DELETE "https://api.synodic.ai/{user}"
+curl -X GET "https://api.synodic.ai/{user}/available"
 ```
 
 </TabItem>
@@ -35,8 +36,8 @@ curl -X DELETE "https://api.synodic.ai/{user}"
 ```python
 import requests
 
-response = requests.delete("https://api.synodic.ai/{user}")
-print(response.status_code)
+response = requests.get("https://api.synodic.ai/{user}/available")
+print(response.json())
 ```
 
 </TabItem>
@@ -45,9 +46,9 @@ print(response.status_code)
 ```javascript
 const axios = require('axios');
 
-axios.delete("https://api.synodic.ai/{user}")
+axios.get("https://api.synodic.ai/{user}/available")
     .then(response => {
-        console.log(response.status);
+        console.log(response.data);
     })
     .catch(error => {
         console.error(error);
@@ -61,10 +62,10 @@ axios.delete("https://api.synodic.ai/{user}")
 use reqwest;
 
 fn main() {
-    let response = reqwest::blocking::delete("https://api.synodic.ai/{user}")
+    let response = reqwest::blocking::get("https://api.synodic.ai/{user}/available")
         .expect("Failed to send request");
         
-    println!("{:?}", response.status());
+    println!("{:?}", response.text());
 }
 ```
 
@@ -73,4 +74,8 @@ fn main() {
 
 ### Example Response
 
-`200 SUCCESS`
+```json
+{
+    "available": true
+}
+```

@@ -9,7 +9,7 @@ Downloads the dataset for the specified repository.
 
 ### URL
 
-`ANY https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/dataset/download`
+`ANY https://api.synodic.ai/{user}/{repo}/dataset/download`
 
 ### Path Parameters
 
@@ -26,7 +26,7 @@ Downloads the dataset for the specified repository.
 ### Example Request
 
 ```bash
-curl -X GET "https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{username}/{repo}/dataset/download" \
+curl -X GET "https://api.synodic.ai/{username}/{repo}/dataset/download" \
 -H "format: coco" \
 -H "train_percent: 70" \
 -H "test_percent: 20" \

@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -59,10 +59,15 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Synodic AI',
+      title: 'Synodic Docs',
       logo: {
         alt: 'Synodic AI Logo',
         src: 'img/orbit.svg',
+        style: {
+          height: '24px',
+          width: '24px',
+          marginTop: '4px',
+        },
       },
       items: [
         /*
@@ -131,7 +136,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Synodic AI, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Synodic AI, Inc.`,
     },
     prism: {
       theme: prismThemes.github,

@@ -9,7 +9,7 @@ Checks if the specified repository exists for the user.
 
 ### URL
 
-`GET https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/exists`
+`GET https://api.synodic.ai/{user}/{repo}/exists`
 
 ### Path Parameters
 
@@ -19,4 +19,4 @@ Checks if the specified repository exists for the user.
 ### Example Request
 
 ```bash
-curl -X GET "https://fqk4k22rqc.execute-api.us-east-1.amazonaws.com/{user}/{repo}/exists"
+curl -X GET "https://api.synodic.ai/{user}/{repo}/exists"
