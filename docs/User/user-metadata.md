@@ -86,7 +86,8 @@ fn main() {
     "autolabel_images": 495,
     "inference_frames": 45903,
     "models_trained": 2,
-    "payment_details": true
+    "payment_details": true,
+    "plan": "pay-as-you-go"
 }
 ```
 </TabItem>
