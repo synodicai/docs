@@ -102,12 +102,5 @@ fn main() {
 }
 ```
 </TabItem>
-<TabItem value="Error">
-```json
-{
-    "error": "User not found"
-}
-```
-</TabItem>
 </Tabs>
 
