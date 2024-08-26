@@ -10,7 +10,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-Returns the average price of an autotrained model.
+Returns the average cost and training time of an autotrained model.
 
 ### URL
 
