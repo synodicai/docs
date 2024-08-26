@@ -1,6 +1,7 @@
 :root {
-  --ifm-background-color: #000000;
-  --ifm-navbar-background-color: #000000;
+  --ifm-background-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-background-surface-color: #ffffff;
   --ifm-color-primary: #333333;
   --ifm-color-primary-dark: #000000;
   --ifm-color-primary-darker: #000000;
@@ -15,6 +16,7 @@
 [data-theme='dark'] {
   --ifm-background-color: #000000;
   --ifm-navbar-background-color: #000000;
+  --ifm-background-surface-color: #000000;
   --ifm-color-primary: #ffffff;
   --ifm-color-primary-dark: #000000;
   --ifm-color-primary-darker: #000000;
@@ -22,5 +24,41 @@
   --ifm-color-primary-light: #ffffff;
   --ifm-color-primary-lighter: #ffffff;
   --ifm-color-primary-lightest: #ffffff;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme='dark'] body {
+  background-color: #000000;
+}
+
+.navbar {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+[data-theme='dark'] .navbar {
+  border-bottom: 1px solid #333333;
+}
+[data-theme='dark'] .main-wrapper {
+  background-color: #000000;
+}
+
+[data-theme='dark'] body {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .navbar__link,
+[data-theme='dark'] .navbar__title {
+  color: #ffffff;
+}
+
+[data-theme='dark'] a {
+  color: #ffffff;
+}
+
+[data-theme='dark'] a:hover {
+  color: #cccccc;
+}
+
+h1 {
+  font-size: 2.5rem;
 }

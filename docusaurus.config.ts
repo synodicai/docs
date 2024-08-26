@@ -13,7 +13,6 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
   presets: [
     [
       'classic',
@@ -30,7 +29,6 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
@@ -56,6 +54,16 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
   } satisfies Preset.ThemeConfig,
+  plugins: [
+    [
+      'posthog-docusaurus',
+      {
+        apiKey: 'phc_eEpL55EMGcPekhTx9H5g1cNsYD6oi9x83lC49zb9yoV',
+        appUrl: 'https://docs.synodic.ai',
+        enableInDevelopment: false,
+      },
+    ],
+  ],
 };
 
 export default config;

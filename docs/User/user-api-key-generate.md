@@ -1,8 +1,8 @@
 ---
-id: user-available
-title: User Available
-sidebar_label: Available
-slug: /user/available
+id: user-api-key-generate
+title: Generate a new API Key
+sidebar_label: API Key Generate
+slug: /user/api-key-generate
 ---
 
 ```mdx-code-block
@@ -10,13 +10,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-
-Checks if the username is available or already taken.
-
+Generates an api key for the specified user.
 
 ### URL
 
-`GET https://api.synodic.ai/v0/{user}/available`
+`GET https://api.synodic.ai/v0/{user}/api-key-generate`
 
 ### Headers
 
@@ -32,7 +30,7 @@ Checks if the username is available or already taken.
 <TabItem value="Bash">
 
 ```bash
-curl -X GET "https://api.synodic.ai/v0/{user}/available" -H "x-api-key: YOUR_API_KEY"
+curl -X GET "https://api.synodic.ai/v0/{user}/api-key-generate" -H "x-api-key: YOUR_API_KEY"
 ```
 
 </TabItem>
@@ -45,7 +43,7 @@ headers = {
     "x-api-key": "YOUR_API_KEY"
 }
 
-response = requests.get("https://api.synodic.ai/v0/{user}/available", headers=headers)
+response = requests.get("https://api.synodic.ai/v0/{user}/api-key-generate", headers=headers)
 print(response.json())
 ```
 
@@ -59,7 +57,7 @@ const headers = {
     "x-api-key": "YOUR_API_KEY"
 };
 
-axios.get("https://api.synodic.ai/v0/{user}/available", { headers })
+axios.get("https://api.synodic.ai/v0/{user}/api-key-generate", { headers })
     .then(response => {
         console.log(response.data);
     })
@@ -76,7 +74,7 @@ use reqwest;
 
 fn main() {
     let client = reqwest::blocking::Client::new();
-    let response = client.get("https://api.synodic.ai/v0/{user}/available")
+    let response = client.get("https://api.synodic.ai/v0/{user}/api-key-generate")
         .header("x-api-key", "YOUR_API_KEY")
         .send()
         .expect("Failed to send request");
@@ -92,6 +90,6 @@ fn main() {
 
 ```json
 {
-    "available": true
+    "api_key": "AErhF3kYnuxqYAHHjEizoOpEWWSxYprNMvBGGSc1"
 }
 ```

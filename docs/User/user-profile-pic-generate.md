@@ -1,8 +1,8 @@
 ---
-id: user-available
-title: User Available
-sidebar_label: Available
-slug: /user/available
+id: user-profile-pic-generate
+title: Generate a new Profile Pic
+sidebar_label: Profile Pic Generate
+slug: /user/profile-pic-generate
 ---
 
 ```mdx-code-block
@@ -10,13 +10,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-
-Checks if the username is available or already taken.
-
+Generates a profile picture for the specified user.
 
 ### URL
 
-`GET https://api.synodic.ai/v0/{user}/available`
+`GET https://api.synodic.ai/v0/{user}/profile-pic-generate`
 
 ### Headers
 
@@ -32,7 +30,7 @@ Checks if the username is available or already taken.
 <TabItem value="Bash">
 
 ```bash
-curl -X GET "https://api.synodic.ai/v0/{user}/available" -H "x-api-key: YOUR_API_KEY"
+curl -X GET "https://api.synodic.ai/v0/{user}/profile-pic-generate" -H "x-api-key: YOUR_API_KEY"
 ```
 
 </TabItem>
@@ -45,7 +43,7 @@ headers = {
     "x-api-key": "YOUR_API_KEY"
 }
 
-response = requests.get("https://api.synodic.ai/v0/{user}/available", headers=headers)
+response = requests.get("https://api.synodic.ai/v0/{user}/profile-pic-generate", headers=headers)
 print(response.json())
 ```
 
@@ -59,7 +57,7 @@ const headers = {
     "x-api-key": "YOUR_API_KEY"
 };
 
-axios.get("https://api.synodic.ai/v0/{user}/available", { headers })
+axios.get("https://api.synodic.ai/v0/{user}/profile-pic-generate", { headers })
     .then(response => {
         console.log(response.data);
     })
@@ -76,7 +74,7 @@ use reqwest;
 
 fn main() {
     let client = reqwest::blocking::Client::new();
-    let response = client.get("https://api.synodic.ai/v0/{user}/available")
+    let response = client.get("https://api.synodic.ai/v0/{user}/profile-pic-generate")
         .header("x-api-key", "YOUR_API_KEY")
         .send()
         .expect("Failed to send request");
@@ -92,6 +90,6 @@ fn main() {
 
 ```json
 {
-    "available": true
+    "photo_url": "https://synodic-profile.s3.amazonaws.com/fhncxxll.png"
 }
 ```

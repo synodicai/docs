@@ -1,5 +1,5 @@
 ---
-id: api-user-get
+id: user-metadata
 title: User Metadata
 sidebar_label: Metadata
 slug: /user/metadata
@@ -14,11 +14,15 @@ Returns the metadata associated with a user.
 
 ### URL
 
-`GET https://api.synodic.ai/{user}`
+`GET https://api.synodic.ai/v0/{user}`
+
+### Headers
+
+- **x-api-key**: `YOUR_API_KEY` (string, optional)
 
 ### Path Parameters
 
-- **\{user\}**: username (string) or Firebase UID (string)
+- **\{user\}**: username (string)
 
 ### Example Request
 
@@ -26,7 +30,7 @@ Returns the metadata associated with a user.
 <TabItem value="Bash">
 
 ```bash
-curl -X GET "https://api.synodic.ai/{user}"
+curl -X GET "https://api.synodic.ai/v0/{user}" -H "x-api-key: YOUR_API_KEY"
 ```
 
 </TabItem>
@@ -35,7 +39,11 @@ curl -X GET "https://api.synodic.ai/{user}"
 ```python
 import requests
 
-response = requests.get("https://api.synodic.ai/{user}")
+headers = {
+    "x-api-key": "YOUR_API_KEY"
+}
+
+response = requests.get("https://api.synodic.ai/v0/{user}", headers=headers)
 print(response.json())
 ```
 
@@ -45,7 +53,11 @@ print(response.json())
 ```javascript
 const axios = require('axios');
 
-axios.get("https://api.synodic.ai/{user}")
+const headers = {
+    "x-api-key": "YOUR_API_KEY"
+};
+
+axios.get("https://api.synodic.ai/v0/{user}", { headers })
     .then(response => {
         console.log(response.data);
     })
@@ -61,7 +73,10 @@ axios.get("https://api.synodic.ai/{user}")
 use reqwest;
 
 fn main() {
-    let response = reqwest::blocking::get("https://api.synodic.ai/{user}")
+    let client = reqwest::blocking::Client::new();
+    let response = client.get("https://api.synodic.ai/v0/{user}")
+        .header("x-api-key", "YOUR_API_KEY")
+        .send()
         .expect("Failed to send request");
         
     println!("{:?}", response.text());
@@ -74,12 +89,10 @@ fn main() {
 ### Example Response
 
 <Tabs>
-<TabItem value="User Metadata">
+<TabItem value="Current User Metadata">
 ```json
 {
     "created_at": 1716899295,
-    "username": "example",
-    "display_name": "Example",
     "photo_url": "https://synodic-profile.s3.amazonaws.com/lowoyylw.png",
     "repositories": ["example/coffee", "example/cars"],
     "autotrain_units": 150,
@@ -91,16 +104,13 @@ fn main() {
 }
 ```
 </TabItem>
-<TabItem value="Other User Metadata">
+<TabItem value="Other User's Metadata">
 ```json
 {
     "created_at": 1716899295,
-    "username": "example",
-    "display_name": "Example",
     "photo_url": "https://synodic-profile.s3.amazonaws.com/lowoyylw.png",
     "repositories": ["example/coffee", "example/cars"]
 }
 ```
 </TabItem>
 </Tabs>
-
