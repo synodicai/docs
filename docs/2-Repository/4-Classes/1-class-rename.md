@@ -1,8 +1,8 @@
 ---
-id: user-available
-title: User Available
-sidebar_label: Available
-slug: /user/available
+id: class-rename
+title: Class Rename
+sidebar_label: Rename
+slug: /class/rename
 ---
 
 ```mdx-code-block
@@ -11,12 +11,12 @@ import TabItem from '@theme/TabItem';
 ```
 
 
-Checks if the username is available or already taken.
+Renames a class in a repository.
 
 
 ### URL
 
-`GET https://api.synodic.ai/v0/{user}/available`
+`POST https://api.synodic.ai/v0/{user}/{repo}/class/rename`
 
 ### Headers
 
@@ -25,6 +25,12 @@ Checks if the username is available or already taken.
 ### Path Parameters
 
 - **\{user\}**: username (string)
+- **\{repo\}**: repository name (string)
+
+### Body
+
+- **index**: class index (integer)
+- **class**: class name (string)
 
 ### Example Request
 
@@ -32,7 +38,7 @@ Checks if the username is available or already taken.
 <TabItem value="Bash">
 
 ```bash
-curl -X GET "https://api.synodic.ai/v0/{user}/available" -H "x-api-key: YOUR_API_KEY"
+curl -X POST "https://api.synodic.ai/v0/{user}/{repo}/class/rename" -H "x-api-key: YOUR_API_KEY" -H "Content-Type: application/json" -d '{"index": 0, "class": "new_class_name"}'
 ```
 
 </TabItem>
@@ -45,7 +51,7 @@ headers = {
     "x-api-key": "YOUR_API_KEY"
 }
 
-response = requests.get("https://api.synodic.ai/v0/{user}/available", headers=headers)
+response = requests.post("https://api.synodic.ai/v0/{user}/{repo}/class/rename", headers=headers, json={"index": 0, "class": "new_class_name"})
 print(response.json())
 ```
 
@@ -59,7 +65,7 @@ const headers = {
     "x-api-key": "YOUR_API_KEY"
 };
 
-axios.get("https://api.synodic.ai/v0/{user}/available", { headers })
+axios.post("https://api.synodic.ai/v0/{user}/{repo}/class/rename", { index: 0, class: "new_class_name" }, { headers })
     .then(response => {
         console.log(response.data);
     })
@@ -76,8 +82,9 @@ use reqwest;
 
 fn main() {
     let client = reqwest::blocking::Client::new();
-    let response = client.get("https://api.synodic.ai/v0/{user}/available")
+    let response = client.post("https://api.synodic.ai/v0/{user}/{repo}/class/rename")
         .header("x-api-key", "YOUR_API_KEY")
+        .json(&serde_json::json!({ "index": 0, "class": "new_class_name" }))
         .send()
         .expect("Failed to send request");
         
@@ -92,6 +99,9 @@ fn main() {
 
 ```json
 {
-    "available": true
+    "classes": [
+        "Renamed Class 0",
+        "Existing Class 1",
+        "Existing Class 2"
+    ]
 }
-```
