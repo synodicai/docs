@@ -36,7 +36,6 @@ Calculates the price to autotrain a model based on the specified configuration.
 
 ```bash
 curl -X GET "https://api.synodic.ai/v0/pricing/calculate?gpu={gpu}&variant={variant}&epochs={epochs}&train_images={train_images}&test_images={test_images}&valid_images={valid_images}"
-
 ```
 
 </TabItem>
@@ -80,7 +79,6 @@ axios.get("https://api.synodic.ai/v0/pricing/calculate", { params })
     .catch(error => {
         console.error(error);
     });
-
 ```
 
 </TabItem>
@@ -106,7 +104,6 @@ fn main() {
         
     println!("{:?}", response.text().expect("Failed to read response text"));
 }
-
 ```
 
 </TabItem>
